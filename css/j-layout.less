@@ -1,0 +1,164 @@
+// allg stile & farben
+
+header {
+	.order(1);
+	height: 4em;
+	background: @whitesmoke;
+
+	.logo {
+		display: block;
+		overflow: hidden;
+		text-align: center;
+		height: 4em;
+
+		a {
+			text-decoration: none;
+		}
+
+		h1 {
+			text-align: center;
+			font-weight: 300;
+			font-size: 2em;
+			color: @brand-color;
+			padding: 0;
+			margin: .5em 0;
+		}
+	}
+}
+
+.info {
+	display: block;
+	overflow: hidden;
+	text-align: center;
+	height: 4em;
+	background: @whitesmoke;
+}
+
+.no-js .info {
+	.visuallyhidden
+}
+
+.wrapper {
+	.flexbox;
+	.flex-flow(column wrap);
+}
+
+aside {
+	background: @smoke;
+}
+
+.main {
+	background: @smoke;
+	padding: 1em !important;
+}
+
+nav {
+	background: @whitesmoke;
+	.order(2);
+}
+
+.wrapper-push {
+	.order(4);
+}
+
+section {
+
+	&.rslides_container {
+		.order (3);
+	}
+
+	&.top {
+		.order(5);
+		background: @gainsboro-darker;
+	}
+
+	&.bottom {
+		.order(6);
+		background: @gainsboro-darker;
+	}
+}
+
+footer {
+	.order(7);
+	background: @concrete-darker;
+}
+
+header, section.rslides_container, section.top, section.bottom, footer, nav, aside, .main {
+	.make-block
+}
+
+footer, section.top, section.bottom {
+	.flexbox;
+	.flex-flow(row wrap);
+	.justify-content(center);
+	align-items: stretch;
+	align-content: space-around;
+
+	.module {
+		.flex(1);
+		min-width: 14em;
+		max-width: 58em;
+		margin: 1em;
+	}
+}
+
+// media queries // 48 x 16 = 768
+@media screen and (min-width: 48em){
+
+	body {
+		background: url(../images/back-4.jpg) center top no-repeat fixed;
+	}
+
+	.wrapper-push {
+		max-width: 58em;
+		.order(5);
+	}
+
+	.main {
+		padding: 1em 2em !important;
+	}
+
+	header {
+		height: 6em;
+
+		.logo {
+			height: 6em;
+
+			h1 {
+				font-size: 3em;
+			}
+		}
+	}
+
+	section {
+		&.slides {
+			.order(3);
+		}
+
+		&.top {
+			.order(4);
+		}
+	}
+
+	.info {
+		.visuallyhidden
+	}
+
+	aside {
+		background: transparent;
+	}
+
+	.no-js > aside {
+
+	}
+
+    section.top, section.bottom, section.wrapper-push, footer, header, nav {
+	    opacity: 0.90;
+	    filter: Alpha(Opacity=90);
+    }
+}
+
+@media screen and (min-width: 80em){
+
+
+}

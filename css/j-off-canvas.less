@@ -1,0 +1,229 @@
+// vertical off-canvas sidebars:
+// aside and nav that slides from the left or right
+
+.sidebar {
+	position: absolute;
+	top: 0;
+	height: auto;
+	// z-index: 1000;
+}
+
+// krumme Zahl: 320 px / 16 = 20em - 4em für buttons = 16em
+// nav switches between vertical and horizontal menu
+
+nav {
+	left: -16em;
+	width: 16em;
+
+	&.sidebar-open {
+		left: -16em;
+	}
+}
+
+aside {
+	right: -16em;
+	width: 16em;
+
+	&.sidebar-open {
+		right: -16em;
+	}
+}
+
+// Push classes applied to the body
+.sidebar-push {
+	overflow-x: hidden;
+	position: relative;
+	left: 0;
+}
+
+// für links
+.sidebar-push-toright {
+	left: 16em;
+}
+
+// für rechts
+.sidebar-push-toleft {
+	left: -16em;
+}
+
+// Transitions
+.sidebar,
+.sidebar-push {
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.wrapper-push, .wrapper {
+	margin: 0 auto;
+	width: 100%;
+	padding: 0;
+}
+
+// buttons
+#showLeftPush {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#showRightPush {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#showLeftPush, #showRightPush {
+	border: none;
+	.border-radius(0); // override buttons rounded corners
+	background-color: slategray;
+	color: white;
+	padding: .1em;
+	display: block;
+	width: 4em;
+	height: 4em;
+	cursor: pointer;
+	margin: 0;
+	font-size: 1em;
+
+	&:hover {
+		background-color: lightslategray;
+	}
+
+	&.active {
+		background-color: darkslategray;
+		color: cornsilk;
+	}
+
+	&.disabled {
+		background-color: gray;
+		pointer-events: none;
+	}
+}
+
+//icons
+#showLeftPush {
+
+	&:before {
+		display: inline-block;
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 2em;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		content: "\f0c9";
+	}
+
+}
+
+#showRightPush {
+
+	&:before {
+		display: inline-block;
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 2em;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		content: "\f053";
+	}
+
+	&.active:before {
+		display: inline-block;
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 2em;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		content: "\f054";
+	}
+
+}
+
+// fallback / via modernizr
+.no-js > {
+
+	#showLeftPush, #showRightPush {
+		.visuallyhidden
+	}
+
+	nav, aside {
+		float: left;
+		width: 100%;
+		position: relative;
+		left: inherit;
+		right: inherit;
+	}
+
+	@media screen and (min-width: 48em) {
+		aside {
+			width: 38.2%; // goldener schnitt
+		}
+	}
+}
+
+// media queries
+@media screen and (min-width: 30em) {
+
+	nav {
+		left: -26em;
+		width: 26em;
+
+		&.sidebar-open {
+			left: -26em;
+		}
+	}
+
+	aside {
+		right: -26em;
+		width: 26em;
+
+		&.sidebar-open {
+			right: -26em;
+		}
+	}
+
+	// für links
+	.sidebar-push-toright {
+		left: 26em;
+	}
+
+	// für rechts
+	.sidebar-push-toleft {
+		left: -26em;
+	}
+}
+
+@media screen and (min-width: 48em) {
+
+	.sidebar {
+		position: relative;
+	}
+
+	nav {
+		left: 0;
+		width: 100%;
+	}
+
+	aside {
+		right: 0;
+		width: 38.2%; // goldener schnitt
+	}
+
+	.main {
+		width: 61.8%; // goldener schnitt
+	}
+
+	// buttons
+	#showLeftPush, #showRightPush {
+		.visuallyhidden
+	}
+}
