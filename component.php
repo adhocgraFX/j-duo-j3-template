@@ -25,7 +25,7 @@ $doc->addStyleSheet($tpath.'/css/j-template.css');
 <body id="print">
 
 <header>
-    <div class="logo">
+    <div class="logo-text">
         <h1>adhocgraFX | Fotografien</h1>
     </div>
 </header>
