@@ -27,7 +27,7 @@ $user = JFactory::getUser();
 $doc->addStyleSheet($tpath.'/css/j-template.css');
 
 // modernizr mit html5-shiv must be in the head
-$doc->addScript($tpath.'/js/modernizr.custom.min.js');
+$doc->addScript($tpath.'/js/modernizr-2.6.2-respond-1.1.0.min.js');
 ?>
 
 <!doctype html>
@@ -36,10 +36,9 @@ $doc->addScript($tpath.'/js/modernizr.custom.min.js');
 <!--[if IEMobile]> <html lang="<?php echo $this->language; ?>" class="iemobile"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="<?php echo $this->language; ?>" class="no-js ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="<?php echo $this->language; ?>" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="<?php echo $this->language; ?>" class="no-js"><!--<![endif]-->
-
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="<?php echo $this->language; ?>" class="no-js" xmlns="http://www.w3.org/1999/html"><!--<![endif]-->
 <head>
-
+    <!-- hier extra wg langem js code-->
     <meta charset="utf-8" >
 
     <!-- Bildverkleinerung über mobify cdn -->
@@ -72,7 +71,9 @@ $doc->addScript($tpath.'/js/modernizr.custom.min.js');
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $tpath; ?>/images/apple-touch-icon-114x114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $tpath; ?>/images/apple-touch-icon-144x144-precomposed.png">
 
+    <!-- fontAwesome ... wer will
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    -->
     <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Fira+Sans:300,300i,400,400i,500,500i,700,700i">
 
 </head>
@@ -125,9 +126,9 @@ $doc->addScript($tpath.'/js/modernizr.custom.min.js');
 		<aside class="sidebar" id="sidebar-s2" role="complementary">
             <div class="logo-social">
                 <ul class="social-buttons">
-                    <li><a href="https://twitter.com/adhocgraFX" target="_blank" title="twitter"><span class="icon icon-2x icon-twitter"></span></a></li>
-                    <li><a href="https://plus.google.com/u/0/111658539092346200948/posts" target="_blank" title="google plus"><span class="icon icon-2x icon-google-plus"></span></a></li>
-                    <li><a href="https://github.com/adhocgraFX" target="_blank" title="github"><span class="icon icon-2x icon-github"></span></a></li>
+                    <li><a href="https://twitter.com/adhocgraFX" target="_blank" title="twitter"><span class="icon-twitter"></span></a></li>
+                    <li><a href="https://plus.google.com/u/0/111658539092346200948/posts" target="_blank" title="google plus"><span class="icon-google-plus-square"></span></a></li>
+                    <li><a href="https://github.com/adhocgraFX" target="_blank" title="github"><span class="icon-github"></span></a></li>
                 </ul>
             </div>
 			<jdoc:include type="modules" name="sidebar" style="jduo"  />
