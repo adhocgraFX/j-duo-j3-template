@@ -14,5 +14,6 @@ header($ExpStr);
 // load scripts
 require('classie.min.js');
 require('responsiveslides.min.js');
-
+// typographic quotes
+require('curlies.min.js');
 ?>

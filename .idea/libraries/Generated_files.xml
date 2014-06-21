@@ -3,14 +3,15 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/js/responsiveslides.min.js" />
-        <item url="file://$PROJECT_DIR$/js/jquery.curlies.min.js" />
+        <item url="file://$PROJECT_DIR$/js/curlies.min.js" />
         <item url="file://$PROJECT_DIR$/js/classie.min.js" />
         <item url="file://$PROJECT_DIR$/js/modernizr.custom.min.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/js/responsiveslides.min.js" />
       <root url="file://$PROJECT_DIR$/js/jquery.curlies.min.js" />
+      <root url="file://$PROJECT_DIR$/js/responsiveslides.min.js" />
+      <root url="file://$PROJECT_DIR$/js/curlies.min.js" />
       <root url="file://$PROJECT_DIR$/js/classie.min.js" />
       <root url="file://$PROJECT_DIR$/js/modernizr.custom.min.js" />
     </CLASSES>

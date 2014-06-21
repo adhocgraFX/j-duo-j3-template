@@ -102,6 +102,11 @@
         })
     });
 
+    // typographic quotes
+    jQuery(document).ready(function () {
+        jQuery('body').curlies();
+    });
+
     //  google analytics id
     var _gaq=[['_setAccount','UA-22101886-3'],['_trackPageview']];
         _gaq.push (['_gat._anonymizeIp']);
