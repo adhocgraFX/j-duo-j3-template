@@ -86,7 +86,7 @@ section {
 
 // paragraph styles plus helper classes
 p {
-	margin-top: @paragraph-val/2;
+	margin-top: @small-paragraph-val;
 	margin-bottom: @paragraph-val;
 
 	img {
@@ -103,10 +103,10 @@ p {
 	}
 
 	&.bildlegende {
-		font-size: 100%;
 		text-indent: 0;
 		font-style: italic;
-		margin: @paragraph-val/2 0;
+		margin-top: -@paragraph-val;
+		margin-bottom: @indent-val;
 	}
 
 	&.autor {
@@ -114,6 +114,7 @@ p {
 		text-indent: 0;
 		text-align: right;
 		font-style: italic;
+		margin-bottom: @indent-val;
 	}
 
 	&.columns-2 {
@@ -175,16 +176,19 @@ article {
 			margin-top: -@paragraph-val;
 			// text-align: justify;
 		}
+
 		&.bild + p,
 		&.lead + p,
 		&.bildlegende + p,
 		&.autor + p {
 			text-indent: 0 !important;
 		}
+
 		&.readmore {
 			text-indent: 0 !important;
 			display: block;
 			padding: 1em 0 2em 0;
+
 			a {
 				margin: 0 !important;
 			}

@@ -27,7 +27,7 @@ $user = JFactory::getUser();
 $doc->addStyleSheet($tpath.'/css/j-template.css');
 
 // modernizr mit html5-shiv must be in the head
-$doc->addScript($tpath.'/js/modernizr-2.6.2-respond-1.1.0.min.js');
+$doc->addScript($tpath.'/js/modernizr-2.8.2.min.js');
 ?>
 
 <!doctype html>
@@ -74,6 +74,7 @@ $doc->addScript($tpath.'/js/modernizr-2.6.2-respond-1.1.0.min.js');
     <!-- fontAwesome ... wer will
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     -->
+
     <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Fira+Sans:300,300i,400,400i,500,500i,700,700i">
 
 </head>
@@ -157,7 +158,8 @@ $doc->addScript($tpath.'/js/modernizr-2.6.2-respond-1.1.0.min.js');
 
 <!-- load plugin options -->
 <?php include_once ('js/plugin.js.php'); ?>
-
 </body>
+
+
 
 </html>
