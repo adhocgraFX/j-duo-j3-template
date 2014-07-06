@@ -1,5 +1,7 @@
 <?php
 // get template params
+$analytics = $this->params->get('analytics');
+$textresizer = $this->params->get('textresizer');
 
 ?>
 
@@ -92,8 +94,9 @@
 
     // go to top
     jQuery(window).load(function() {
-        var offset = 220;
+        var offset = 240;
         var duration = 500;
+
         jQuery(window).scroll(function() {
             if (jQuery(this).scrollTop() > offset) {
                 jQuery('.go-top').fadeIn(duration);
@@ -151,17 +154,36 @@
     });
 
     //  google analytics code asynchron + anonym
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-22101886-3']);
-    _gaq.push(['_gat._anonymizeIp']);
-    _gaq.push(['_trackPageview']);
+    <?php if ($analytics != "UA-XXXXX-X"): ?>
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '<?php echo htmlspecialchars($analytics); ?>']);
+        _gaq.push(['_gat._anonymizeIp']);
+        _gaq.push(['_trackPageview']);
 
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
-            '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    <?php endif; ?>
+
+    //  text resizer
+    <?php if ($textresizer == 1): ?>
+    jQuery(document).ready( function() {
+        jQuery( "#textsizer-embed a" ).textresizer({
+            target: ".main",
+            type: "css",
+            sizes: [
+                // Small. Index 0
+                { "font-size" : "87.5%" },
+                // Default. Index 1
+                { "font-size" : "100%" },
+                // Large. Index 2
+                { "font-size" : "112.5%" }
+            ],
+            selectedIndex: 1
+        });
+    });
+    <?php endif; ?>
 
 </script>
-

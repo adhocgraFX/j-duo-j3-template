@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
 	}
 
 	&.subheading, small {
-		color: @subheading-color;
+		color: @subheading-color !important;
 		font-size: 87.5%;
 	}
 }
@@ -74,6 +74,7 @@ h6 {
 article {
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 300 !important;
+		color: @heading-color !important;
 	}
 }
 
@@ -115,16 +116,6 @@ p {
 		text-align: right;
 		font-style: italic;
 		margin-bottom: @indent-val;
-	}
-
-	&.columns-2 {
-		.content-columns(2, 2em, @gray, dotted, 1px);
-		margin: @paragraph-val 0;
-	}
-
-	&.columns-3 {
-		.content-columns(3, 2em, @gray, dotted, 1px);
-		margin: @paragraph-val 0;
 	}
 
 	&.highlight {
@@ -512,6 +503,21 @@ article {
 	h6 {
 		font-size: 1em;
 	}
+
+	// paragraph styles plus helper classes
+	p {
+
+		&.columns-2 {
+			.content-columns(2, 2em, @gray, dotted, 1px);
+			margin: @paragraph-val 0;
+		}
+
+		&.columns-3 {
+			.content-columns(2, 2em, @gray, dotted, 1px);
+			margin: @paragraph-val 0;
+		}
+	}
+
 }
 
 @media screen and (min-width: 80em) {
@@ -558,73 +564,13 @@ article {
 	h6 {
 		font-size: 1em;
 	}
-}
 
-// Fira Sans
-// Experiment: über brick laden
-/*
-@font-face {
-	font-family: 'Fira Sans';
-	src: url('../fonts/FiraSans-Regular.eot');
-	src: url('../fonts/FiraSans-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/FiraSans-Regular.woff') format('woff'), url('../fonts/FiraSans-Regular.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
+	// paragraph styles plus helper classes
+	p {
 
-@font-face {
-	font-family: 'Fira Sans';
-	src: url('../fonts/FiraSans-Light.eot');
-	src: url('../fonts/FiraSans-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/FiraSans-Light.woff') format('woff'), url('../fonts/FiraSans-Light.ttf') format('truetype');
-	font-weight: 300;
-	font-style: normal;
+		&.columns-3 {
+			.content-columns(3, 2em, @gray, dotted, 1px);
+			margin: @paragraph-val 0;
+		}
+	}
 }
-
-@font-face {
-	font-family: 'Fira Sans';
-	src: url('../fonts/FiraSans-Medium.eot');
-	src: url('../fonts/FiraSans-Medium.eot?#iefix') format('embedded-opentype'), url('../fonts/FiraSans-Medium.woff') format('woff'), url('../fonts/FiraSans-Medium.ttf') format('truetype');
-	font-weight: 500;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Fira Sans';
-	src: url('../fonts/FiraSans-Bold.eot');
-	src: url('../fonts/FiraSans-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/FiraSans-Bold.woff') format('woff'), url('../fonts/FiraSans-Bold.ttf') format('truetype');
-	font-weight: bold;
-	font-style: normal;
-}
-
-// italics
-@font-face {
-	font-family: 'Fira Sans';
-	src: url('../fonts/FiraSans-RegularItalic.eot');
-	src: url('../fonts/FiraSans-RegularItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/FiraSans-RegularItalic.woff') format('woff'), url('../fonts/FiraSans-RegularItalic.ttf') format('truetype');
-	font-weight: normal;
-	font-style: italic;
-}
-
-@font-face {
-	font-family: 'Fira Sans';
-	src: url('../fonts/FiraSans-LightItalic.eot');
-	src: url('../fonts/FiraSans-LightItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/FiraSans-LightItalic.woff') format('woff'), url('../fonts/FiraSans-LightItalic.ttf') format('truetype');
-	font-weight: 300;
-	font-style: italic;
-}
-
-@font-face {
-	font-family: 'Fira Sans';
-	src: url('../fonts/FiraSans-MediumItalic.eot');
-	src: url('../fonts/FiraSans-MediumItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/FiraSans-MediumItalic.woff') format('woff'), url('../fonts/FiraSans-MediumItalic.ttf') format('truetype');
-	font-weight: 500;
-	font-style: italic;
-}
-
-@font-face {
-	font-family: 'Fira Sans';
-	src: url('../fonts/FiraSans-BoldItalic.eot');
-	src: url('../fonts/FiraSans-BoldItalic.eot?#iefix') format('embedded-opentype'), url('../fonts/FiraSans-BoldItalic.woff') format('woff'), url('../fonts/FiraSans-BoldItalic.ttf') format('truetype');
-	font-weight: bold;
-	font-style: italic;
-}
-*/

@@ -33,6 +33,7 @@
 @whitesmoke:            #f5f5f5;
 @whitesmoke-light:      #f9f9f9;
 
+@smoke-dark:            #fdfdfd;
 @smoke:                 #fefefe;
 
 @white:                 #ffffff;
@@ -76,17 +77,24 @@
 @gold-light:            #E1DCBE;
 @gold:                  #AAA078;
 
-// btand color je nach job
+// brand color je nach job
+@brand-color:           @gold; // @jugfuldablue;
 @brand-color-light:     lighten(@brand-color, 5%);
-@brand-color:           #826227;
+@brand-color-lighter:   lighten(@brand-color, 10%);
 @brand-color-dark:      darken(@brand-color, 5%);
 @brand-color-darker:    darken(@brand-color, 10%);
 
+// JUG Fulda
+@jugfuldablue-light:    #99BAFF;
+@jugfuldablue:          #748dc1;
+@jugfuldablue-dark:     #2C4D91;
+@jugfuldablue-darker:   #244079;
+
 // link colors und brand colors in sync? TODO zur Diskussion
-@link-color:            @brand-color;
-@link-hover-color:      @brand-color-light;
-@link-focus-color:      @brand-color-dark;
-@link-visited-color:    @brand-color-darker;
+@link-color:            @gold; // @jugfuldablue;
+@link-hover-color:      lighten(@link-color, 5%);
+@link-focus-color:      darken(@link-color, 5%);
+@link-visited-color:    darken(@link-color, 10%);
 
 
 // Typeplate inspired font variables
@@ -109,10 +117,10 @@
 
 // body and basic text colors
 
-@body-color: #fdfdfd;
-@body-copy-color: #3a4757;
-@heading-color: #4d5f69;
-@subheading-color: @gray-light;
+@body-color: @smoke-dark;
+@body-copy-color: @concrete-darker;
+@heading-color: @concrete-dark;
+@subheading-color: @concrete;
 
 
 // TypeScale Unit
@@ -130,4 +138,4 @@
 // bootstrap variables
 
 @baseBorderRadius: .2em;
-@shadow:                @gainsboro;
+@shadow: @gainsboro;

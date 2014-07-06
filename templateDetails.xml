@@ -48,6 +48,7 @@
 	
 	<positions>
 		<position>nav</position>
+        <position>search</position>
 		<position>slideshow</position>
 		<position>breadcrumbs</position>
 		<position>sidebar</position>
@@ -59,8 +60,121 @@
 	
 	<languages folder="languages">
 		<language tag="de-DE">de-DE.tpl_jduo.ini</language>
+        <language tag="en-EN">en-EN.tpl_jduo.ini</language>
 	</languages>
-	
-	<config></config>	
-	
+
+    <config>
+        <fields name="params">
+            <fieldset name="options">
+                <field name="Site Title, Logo and Background Image"
+                       type="spacer"
+                       hr="false" >
+                </field>
+                <field name="title"
+                       type="text"
+                       default="Site Title"
+                       label="Site Title H1"
+                       description="Site Title H1"
+                       filter="string" >
+                </field>
+                <field name="logo"
+                       type="media"
+                       label="Logo"
+                       description="Select logo image" >
+                </field>
+                <field name="logotitle"
+                       type="text"
+                       default="Site Title"
+                       label="Logo Alt Title"
+                       description="Logo alt title"
+                       filter="string" >
+                </field>
+                <field name="bodybackground"
+                       type="media"
+                       label="Body Background Image"
+                       description="Select body background image" >
+                </field>
+
+                <field name="Colors"
+                       type="spacer"
+                       hr="false" >
+                </field>
+                <field name="brandcolor"
+                       type="color"
+                       default="#826227"
+                       label="Brand Color H1"
+                       description="Brand color H1"
+                       size="7"
+                       class="color" >
+                </field>
+
+                <field name="Typography"
+                       type="spacer"
+                       hr="false" >
+                </field>
+                <field name="basefontsize"
+                       type="text"
+                       filter="integer"
+                       size="3"
+                       default="100"
+                       label="Html base font size"
+                       description="Html base font size in %" >
+                </field>
+
+                <field name="Page width"
+                       type="spacer"
+                       hr="false" >
+                </field>
+                <field name="maxwidth"
+                       type="text"
+                       filter="integer"
+                       default="58"
+                       label="Wrapper Width"
+                       description="Wrapper width in em"
+                       size="3" >
+                </field>
+
+            </fieldset>
+
+            <fieldset name="advanced">
+                <field name="Google Analytics"
+                       type="spacer"
+                       hr="false" >
+                </field>
+                <field name="analytics"
+                       type="text"
+                       default="UA-XXXXX-X"
+                       label="Google Analytics"
+                       description="Google analytics code; anonym, asynchon"
+                       size="10" >
+                </field>
+
+                <field name="External Link Buttons; Icons with font-awesome class names"
+                       type="spacer"
+                       hr="false" >
+                </field>
+                <field name="linkpad"
+                       type="radio"
+                       default="1"
+                       label="External Link Buttons"
+                       description="External Link Buttons">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field name="Textresizer"
+                       type="spacer"
+                       hr="false" >
+                </field>
+                <field name="textresizer"
+                       type="radio"
+                       default="1"
+                       label="Textresizer"
+                       description="Textresizer">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
 </extension>

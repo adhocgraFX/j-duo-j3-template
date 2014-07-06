@@ -1,15 +1,14 @@
 // allg stile & farben
 
 header {
-	.order(1);
-	height: 4em;
-	background: @whitesmoke;
+	// .order(1);
+	height: 3em;
+	background: @whitesmoke; // @jugfuldablue-dark;
 
 	.logo-text {
-		display: block;
 		overflow: hidden;
 		text-align: center;
-		height: 4em;
+		height: 3em;
 
 		a {
 			text-decoration: none;
@@ -18,7 +17,7 @@ header {
 		h1 {
 			text-align: center;
 			font-weight: 300;
-			font-size: 2em;
+			font-size: 1.5em;
 			color: @brand-color;
 			padding: 0;
 			margin: .5em 0;
@@ -29,27 +28,34 @@ header {
 .logo-image {
 	overflow: hidden;
 	text-align: center;
-	background-color: @whitesmoke;
+	height: 3em;
 
 	a {
 		width: 100%;
-		height: 4em;
+		height: 3em;
 		display: block;
 		padding: 0;
+		z-index: -1;
 
 		img {
-
 			height: 100%;
 			width: auto;
 			position: relative;
+			z-index: -1;
 		}
 	}
 }
 
-.logo-social {
-	text-transform: uppercase;
+.search-pad {
+	height: 3em;
+	overflow: hidden;
+}
+
+.link-pad, .textresizer-pad {
 	text-align: center;
-	height: 4em !important;
+	height: 3.5em;
+	border: 1px solid @gainsboro;
+	border-bottom: .5em solid @gainsboro-dark;
 
 	ul  {
 		margin: 0;
@@ -66,8 +72,8 @@ header {
 			a {
 				color: @concrete-dark;
 				display: block;
-				padding: 1em 1.5em;
-				height: 4em;
+				padding: .75em 1em;
+				height: 3em;
 
 				&:hover {
 					color: @concrete-darker;
@@ -75,26 +81,25 @@ header {
 					text-decoration: none;
 				}
 
-				&:focus, &:active {
+				&:focus, &:active, &.textresizer-active {
 					color: @whitesmoke;
 					background: @concrete;
 				}
 				span {
-					font-size: 2em;
+					font-size: 1.5em;
 				}
 			}
 		}
 	}
 }
 
-
-.no-js .logo-image, .no-js .logo-social {
+.no-js .logo-image {
 	.visuallyhidden
 }
 
 .wrapper {
-	.flexbox;
-	.flex-flow(column wrap);
+	// .flexbox;
+	// .flex-flow(column wrap);
 }
 
 aside {
@@ -107,65 +112,62 @@ aside {
 }
 
 nav {
-	background: @whitesmoke;
-	.order(2);
+	background: @whitesmoke; // @jugfuldablue-dark;
+	// .order(2);
 }
 
 .wrapper-push {
-	.order(4);
+	// .order(4);
 }
 
 section {
 
 	&.rslides_container {
-		.order (3);
+		// .order (3);
 	}
 
 	&.top {
-		.order(5);
+		// .order(5);
 		background: @gainsboro-darker;
 	}
 
 	&.bottom {
-		.order(6);
+		// .order(6);
 		background: @gainsboro-darker;
 	}
 }
 
 footer {
-	.order(7);
+	// .order(7);
 	background: @concrete-darker;
 }
 
-header, section.rslides_container, section.top, section.bottom, footer, nav, aside, .main {
+header, section.rslides_container, section.top, section.bottom,
+footer, nav, aside, .main {
 	.make-block
 }
 
 footer, section.top, section.bottom {
-	.flexbox;
-	.flex-flow(row wrap);
-	.justify-content(center);
+	// .flexbox;
+	// .flex-flow(row wrap);
+	// .justify-content(center);
 	// .align-items(stretch);
 	// .align-content(space-around);
 
 	.module {
-		.flex(1);
+		// .flex(1);
 		min-width: 14em;
 		max-width: 58em;
-		margin: 1em;
+		margin: 1em auto;
 	}
 }
 
 // media queries // 48 x 16 = 768
 @media screen and (min-width: 48em){
 
-	body {
-		background: url(../images/back-4.jpg) center top no-repeat fixed;
-	}
-
 	.wrapper-push {
-		max-width: 58em;
-		.order(5);
+		// max-width: 58em;
+		// .order(5);
 	}
 
 	.main {
@@ -186,27 +188,28 @@ footer, section.top, section.bottom {
 
 	section {
 		&.slides {
-			.order(3);
+			// .order(3);
 		}
 
 		&.top {
-			.order(4);
+			// .order(4);
 		}
 	}
 
-	.logo-image, .logo-social {
-		.visuallyhidden
+	.logo-image {
+		position: absolute;
+		left: 0;
+		top: -6em;
+		width: 12em;
+		height: 6em; // 10em;
+
+		a {
+			height: 4em; // 10em;
+			margin: 1em 0; // 0;
+		}
 	}
 
-	aside {
-		background: transparent;
-	}
-
-	.no-js > aside {
-
-	}
-
-    section.top, section.bottom, section.wrapper-push, footer, header, nav {
+	section.top, section.bottom, section.wrapper-push, footer, header, nav {
 	    opacity: 0.90;
 	    filter: Alpha(Opacity=90);
     }

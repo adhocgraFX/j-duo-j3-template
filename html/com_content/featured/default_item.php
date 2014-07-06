@@ -56,7 +56,7 @@ $info    = $this->item->params->get('info_block_position', 0);
 	|| $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_author') ); ?>
 
 <?php if ($useDefList && ($info == 0 ||  $info == 2)) : ?>
-	<dl class="article-info  muted">
+	<dl class="article-info muted lining">
 		<dt class="article-info-term">
 		<?php echo JText::_('COM_CONTENT_ARTICLE_INFO'); ?>
 		</dt>
@@ -147,7 +147,7 @@ $info    = $this->item->params->get('info_block_position', 0);
 <?php echo $this->item->event->beforeDisplayContent; ?> <?php echo $this->item->introtext; ?>
 
 <?php if ($useDefList && ($info == 1 ||  $info == 2)) : ?>
-	<dl class="article-info muted">
+	<dl class="article-info muted lining">
 		<dt class="article-info-term">
 			<?php echo JText::_('COM_CONTENT_ARTICLE_INFO'); ?>
 		</dt>

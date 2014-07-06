@@ -72,7 +72,7 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
 <?php $useDefList = ($params->get('show_modify_date') || $params->get('show_publish_date') || $params->get('show_create_date')
 	|| $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_author')); ?>
 	<?php if ($useDefList && ($info == 0 || $info == 2)) : ?>
-		<div class="article-info muted">
+		<div class="article-info muted lining">
 			<dl class="article-info">
 			<dt class="article-info-term"><?php echo JText::_('COM_CONTENT_ARTICLE_INFO'); ?></dt>
 
@@ -176,7 +176,7 @@ if (!empty($this->item->pagination) && $this->item->pagination && !$this->item->
 	<?php echo $this->item->text; ?>
 
 	<?php if ($useDefList && ($info == 1 || $info == 2)) : ?>
-		<div class="article-info muted">
+		<div class="article-info muted lining">
 			<dl class="article-info">
 			<dt class="article-info-term"><?php echo JText::_('COM_CONTENT_ARTICLE_INFO'); ?></dt>
 

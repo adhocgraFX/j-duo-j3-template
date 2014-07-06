@@ -11,20 +11,21 @@ fieldset {
 input,
 textarea,
 select {
-	border: 1px solid @gray-light;
+	border: 1px solid @brand-color-light;
 	padding: .25em .5em;
 	outline: none;
-	.border-radius(@baseBorderRadius);
-	color: @gray-dark;
+	// .border-radius(@baseBorderRadius);
+	color: @gray;
+	background: @whitesmoke;
 	margin: 0;
 	max-width: 100%;
 	display: block;
 	margin-bottom: .5em;
-	background: @white;
 
 	&:focus {
-		border: 1px solid @brand-color;
-		color: @gray-darker;
+		border: 1px solid @brand-color-dark;
+		color: @gray-dark;
+		background: @smoke;
 	}
 }
 

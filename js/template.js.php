@@ -15,4 +15,7 @@ header($ExpStr);
 require('classie.min.js');
 require('responsiveslides.min.js');
 
+require('jquery.cookie.min.js');
+require('jquery.textresizer.min.js');
+
 ?>

@@ -8,24 +8,24 @@
 	// z-index: 1000;
 }
 
-// krumme Zahl: 320 px / 16 = 20em - 4em für buttons = 16em
+// krumme Zahl: 320 px / 17 = 20em - 3em für buttons = 16em
 // nav switches between vertical and horizontal menu
 
 nav {
-	left: -16em;
-	width: 16em;
+	left: -17em;
+	width: 17em;
 
 	&.sidebar-open {
-		left: -16em;
+		left: -17em;
 	}
 }
 
 aside {
-	right: -16em;
-	width: 16em;
+	right: -17em;
+	width: 17em;
 
 	&.sidebar-open {
-		right: -16em;
+		right: -17em;
 	}
 }
 
@@ -38,12 +38,12 @@ aside {
 
 // für links
 .sidebar-push-toright {
-	left: 16em;
+	left: 17em;
 }
 
 // für rechts
 .sidebar-push-toleft {
-	left: -16em;
+	left: -17em;
 }
 
 // Transitions
@@ -78,23 +78,23 @@ aside {
 #showLeftPush, #showRightPush {
 	border: none;
 	.border-radius(0); // override buttons rounded corners
-	background-color: slategray;
-	color: white;
+	background-color: slategray; // @jugfuldablue-dark;
+	color: white; // @smoke;
 	padding: .1em;
 	display: block;
-	width: 4em;
-	height: 4em;
+	width: 3em;
+	height: 3em;
 	cursor: pointer;
 	margin: 0;
 	font-size: 1em;
 
 	&:hover {
-		background-color: lightslategray;
+		background-color: lightslategray; // @jugfuldablue;
 	}
 
-	&.active {
-		background-color: darkslategray;
-		color: cornsilk;
+	&.active, &:active {
+		background-color: darkslategray; // @jugfuldablue-darker;
+		color: cornsilk; // @whitesmoke;
 	}
 
 	&.disabled {
@@ -104,48 +104,36 @@ aside {
 }
 
 //icons
-#showLeftPush {
+#showLeftPush, #showRightPush, #showRightPush.active {
 
 	&:before {
 		display: inline-block;
 		font-family: FontAwesome;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 2em;
+		font-size: 1.5em;
 		line-height: 1;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+#showLeftPush {
+
+	&:before {
 		content: "\f0c9";
 	}
-
 }
 
 #showRightPush {
 
 	&:before {
-		display: inline-block;
-		font-family: FontAwesome;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 2em;
-		line-height: 1;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
 		content: "\f053";
 	}
 
 	&.active:before {
-		display: inline-block;
-		font-family: FontAwesome;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 2em;
-		line-height: 1;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
 		content: "\f054";
 	}
-
 }
 
 // fallback / via modernizr
@@ -174,31 +162,31 @@ aside {
 @media screen and (min-width: 30em) {
 
 	nav {
-		left: -26em;
-		width: 26em;
+		left: -27em;
+		width: 27em;
 
 		&.sidebar-open {
-			left: -26em;
+			left: -27em;
 		}
 	}
 
 	aside {
-		right: -26em;
-		width: 26em;
+		right: -27em;
+		width: 27em;
 
 		&.sidebar-open {
-			right: -26em;
+			right: -27em;
 		}
 	}
 
 	// für links
 	.sidebar-push-toright {
-		left: 26em;
+		left: 27em;
 	}
 
 	// für rechts
 	.sidebar-push-toleft {
-		left: -26em;
+		left: -27em;
 	}
 }
 
