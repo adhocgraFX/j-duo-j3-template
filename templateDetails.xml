@@ -155,7 +155,7 @@
                 </field>
                 <field name="linkpad"
                        type="radio"
-                       default="1"
+                       default="0"
                        label="External Link Buttons"
                        description="External Link Buttons">
                     <option value="1">JYES</option>
@@ -171,6 +171,19 @@
                        default="1"
                        label="Textresizer"
                        description="Textresizer">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field name="Less Compiler"
+                       type="spacer"
+                       hr="false" >
+                </field>
+                <field name="lesscompile"
+                       type="radio"
+                       default="0"
+                       label="Less Compiler"
+                       description="Less Compiler">
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
                 </field>

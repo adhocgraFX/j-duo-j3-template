@@ -65,7 +65,7 @@ $textresizer = $this->params->get('textresizer');
         jQuery("#slider").responsiveSlides({
             auto: true,
             pager: false,
-            //manualControls: '#slider-pager',
+            // manualControls: '#slider-pager',
             nav: true,
             speed: 1200,
             namespace: "transparent-btns"
@@ -73,20 +73,23 @@ $textresizer = $this->params->get('textresizer');
     });
     <?php endif; ?>
 
-    //  abstände
+    // text-indent, Ausnahmen Erstzeileneinzug
     jQuery(window).load( function() {
         var $paragraph = jQuery("p");
+        // Absatz mit Bild
         $paragraph.has("img").css({
             "margin-top": ".75em",
             "margin-bottom": "1.5em",
             "text-indent": "0px"
         })
             .addClass("bild");
+        // mit Button
         $paragraph.has("button").css({
             "margin-top": ".75em",
             "margin-bottom": ".75em",
             "text-indent": "0px"
         });
+        // mit Anker
         $paragraph.has("a").css({
             "text-indent": "0px"
         });

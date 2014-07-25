@@ -23,12 +23,25 @@ $logo = $this->params->get('logo');
 $logotitle = $this->params->get('logotitle');
 $textresizer = $this->params->get('textresizer');
 $linkpad = $this->params->get('linkpad');
+$lesscompile = $this->params->get('lesscompile');
 
 // Add Joomla! JavaScript Frameworks
 JHtml::_('bootstrap.framework');
 
 // Add current user information
 $user = JFactory::getUser();
+
+// compile template less > template css
+if ($lesscompile == 1):
+    // get files
+    require($tpath."/css/lessc.inc.php");
+    $inputFile = "j-template.less";
+    $outputFile = "j-template.css";
+    // compressed and checked compile
+    $less = new lessc;
+    $less->setFormatter("compressed");
+    echo $less->checkedCompile($inputFile, $outputFile);
+endif;
 
 // template css
 $doc->addStyleSheet($tpath.'/css/j-template.css');
@@ -44,6 +57,7 @@ $doc->addScript($tpath.'/js/modernizr-2.8.2.min.js');
 <!--[if IE 8 ]>    <html lang="<?php echo $this->language; ?>" class="no-js ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="<?php echo $this->language; ?>" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="<?php echo $this->language; ?>" class="no-js" xmlns="http://www.w3.org/1999/html"><!--<![endif]-->
+
 <head>
 
     <jdoc:include type="head" />
@@ -144,11 +158,11 @@ $doc->addScript($tpath.'/js/modernizr-2.8.2.min.js');
             <jdoc:include type="component" />
         </div>
 		<aside class="sidebar" id="sidebar-s2" role="complementary">
-            <?php if ($this->countModules('search')): ?>
-                <div class="search-pad">
+            <div class="search-pad">
+                <?php if ($this->countModules('search')): ?>
                     <jdoc:include type="modules" name="search" style="jduo"  />
-                </div>
-            <?php endif; ?>
+                <?php endif; ?>
+            </div>
             <?php if ($this->countModules('sidebar')): ?>
                 <jdoc:include type="modules" name="sidebar" style="jduo"  />
             <?php endif; ?>
@@ -196,8 +210,7 @@ $doc->addScript($tpath.'/js/modernizr-2.8.2.min.js');
 
 <!-- load plugin options -->
 <?php include_once ('js/plugin.js.php'); ?>
+
 </body>
-
-
 
 </html>

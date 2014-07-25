@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="flex3">
-    <serverData>
-      <paths name="flex3">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="mirror_jduo/templates/j-duo" />
-          </mappings>
-        </serverdata>
-      </paths>
-    </serverData>
-  </component>
+  <component name="PublishConfigData" serverName="flex3" />
 </project>
 
