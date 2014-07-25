@@ -31,18 +31,6 @@ JHtml::_('bootstrap.framework');
 // Add current user information
 $user = JFactory::getUser();
 
-// compile template less > template css
-if ($lesscompile == 1):
-    // get files
-    require($tpath."/css/lessc.inc.php");
-    $inputFile = "j-template.less";
-    $outputFile = "j-template.css";
-    // compressed and checked compile
-    $less = new lessc;
-    $less->setFormatter("compressed");
-    echo $less->checkedCompile($inputFile, $outputFile);
-endif;
-
 // template css
 $doc->addStyleSheet($tpath.'/css/j-template.css');
 
